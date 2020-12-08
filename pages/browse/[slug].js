@@ -39,6 +39,8 @@ export async function getStaticProps({ params }) {
   }
 }
 
+export const config = { amp: true }
+
 const singleTop = ({singleTop}) => {
     if (!singleTop) return <h1>404</h1>
     return (
@@ -47,7 +49,7 @@ const singleTop = ({singleTop}) => {
             {documentToReactComponents(singleTop.fields.description, {
                 renderNode: {
                     [BLOCKS.EMBEDDED_ASSET]: node => (
-                        <Image src={`https:${node.data.target.fields.file.url}`} width={node.data.target.fields.file.details.image.width} height={node.data.target.fields.file.details.image.height} />
+                        <amp-img src={`https:${node.data.target.fields.file.url}`} width={node.data.target.fields.file.details.image.width} height={node.data.target.fields.file.details.image.height} />
                         )
                 }
             })}
