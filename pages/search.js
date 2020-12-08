@@ -6,7 +6,7 @@ export const config = { amp: true }
 const SearchPage = () => {
     return (
         <Layout>
-            searchpage
+            search page
         </Layout>
     )
 }

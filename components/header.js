@@ -39,7 +39,7 @@ const ListItem = styled.li`
 const Header = () => {
     return (
         <Main>
-        <Link href='/'><h1>Top 11</h1></Link>
+        <Link href='/'><h1><a>Top 11</a></h1></Link>
         <List>
             <ListItem><Link href="/">Top</Link></ListItem>
             <ListItem><Link href="/browse">Browse</Link></ListItem>
