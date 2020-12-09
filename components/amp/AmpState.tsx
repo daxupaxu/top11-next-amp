@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types'
 import React from 'react'
 import { AmpIncludeAmpBind } from './AmpCustomElement'
 
@@ -8,7 +7,14 @@ import { AmpIncludeAmpBind } from './AmpCustomElement'
  *
  * @param {Props} props
  */
-export default function AmpState(props) {
+interface Props {
+  id: string,
+  src: string,
+  children: any,
+  
+
+}
+export default function AmpState(props: Props) {
   return (
     <>
       <AmpIncludeAmpBind />
@@ -24,10 +30,4 @@ export default function AmpState(props) {
       </amp-state>
     </>
   )
-}
-
-AmpState.propTypes = {
-  id: PropTypes.string.isRequired,
-  children: PropTypes.any,
-  src: PropTypes.string,
 }

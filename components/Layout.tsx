@@ -11,7 +11,13 @@ const Main = createGlobalStyle`
     }
 `
 
-const Layout = (props) => (
+interface Props {
+  title?: string,
+  description?: string,
+  children: any
+}
+
+const Layout = (props: Props) => (
   <>
     <NextHead>
       <title>{props.title || 'Top11'}</title>

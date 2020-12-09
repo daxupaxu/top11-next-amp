@@ -1,14 +1,16 @@
 import React from 'react'
+
 import Layout from '../components/Layout'
+
 
 export const config = { amp: true }
 
-const SearchPage = () => {
+const WhyPage = () => {
     return (
-        <Layout>
-            search page
+        <Layout title="Top 11 | Why Page">
+            why page
         </Layout>
     )
 }
 
-export default SearchPage
+export default WhyPage

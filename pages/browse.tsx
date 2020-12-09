@@ -1,8 +1,9 @@
 import React from 'react';
-import Layout from '../components/Layout';
-import { fetchEntries } from '../utils/contentfulTopList';
 import Link from 'next/link';
 import styled from 'styled-components';
+
+import Layout from '../components/Layout';
+import { fetchEntries } from '../utils/contentfulTopList';
 
 
 const Item = styled.div`
@@ -30,9 +31,8 @@ const Item = styled.div`
 export const config = { amp: true }
 
 export async function getStaticProps() {
-    const res = await fetchEntries()
-
-    const topList = res.map((singleTop) => {
+    const res: any = await fetchEntries()
+    const topList = res.map((singleTop: any) => {
       return singleTop
     })
     return {
@@ -41,10 +41,15 @@ export async function getStaticProps() {
       }
     }
   }
+  
+  interface Props {
+      singleTop: {}
+      topList: any[]
+  }
 
-const BrowsePage = ({topList}) => {
+const BrowsePage = ({ topList }: Props) => {
     return (
-        <Layout>
+        <Layout title='Top 11 | Browse'>
             {topList.map((singleTop) => (
             <Item key={singleTop.sys.id}>
                 <Link href={`/browse/${singleTop.fields.slug}`}>
