@@ -30,7 +30,7 @@ const Item = styled.div`
 
 export const config = { amp: true }
 
-export async function getStaticProps() {
+export async function getStaticProps(): Promise<any> {
     const res: any = await fetchEntries()
     const topList = res.map((singleTop: any) => {
       return singleTop
@@ -43,7 +43,6 @@ export async function getStaticProps() {
   }
   
   interface Props {
-      singleTop: {}
       topList: any[]
   }
 
