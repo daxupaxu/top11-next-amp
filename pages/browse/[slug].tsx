@@ -3,6 +3,8 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { BLOCKS } from '@contentful/rich-text-types';
 
 import Layout from '../../components/Layout';
+import Offline from '../offline';
+
 
 interface Props {
     singleTop: any
@@ -11,7 +13,7 @@ interface Props {
 export const config = { amp: true }
 
 const singleTop = ({singleTop}: Props) => {
-    if (!singleTop) return <h1>404</h1>
+    if (!singleTop) return <Offline />
     return (
         <Layout>
             {singleTop.fields.title}

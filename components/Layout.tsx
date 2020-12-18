@@ -1,4 +1,4 @@
-import NextHead from 'next/head'
+import Head from 'next/head'
 import { AmpIncludeAmpInstallServiceworker } from './amp/AmpCustomElement'
 import Header from './header'
 import Footer from './footer'
@@ -19,15 +19,15 @@ interface Props {
 
 const Layout = (props: Props) => (
   <>
-    <NextHead>
+    <Head>
       <title>{props.title || 'Top11'}</title>
       <meta name="description" content={props.description || ''} />
       <link rel="icon" sizes="192x192" href="/static/images/icons-192.png" />
       <link rel="apple-touch-icon" href="/static/images/icons-192.png" />
       <link rel="icon" href="/static/favicon.ico" />
       <link rel="manifest" href="/manifest.json" />
-    </NextHead>
-    
+      <link rel="canonical" href="https://example.com"></link>
+    </Head>
     <Header />
     <Main />
       {props.children}

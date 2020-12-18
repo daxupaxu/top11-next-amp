@@ -16,6 +16,7 @@ class MyDocument extends Document {
 
   render() {
     return (
+      <>
       <Html lang="en">
         <Head>
           {this.props.styleTags}
@@ -25,6 +26,7 @@ class MyDocument extends Document {
           <NextScript />
         </body>
       </Html>
+      </>
     )
   }
 }
