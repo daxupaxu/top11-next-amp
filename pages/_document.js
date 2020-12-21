@@ -13,13 +13,15 @@ class MyDocument extends Document {
   const styleTags = sheet.getStyleElement();
   return { ...page, styleTags, ...initialProps };
 }
-
   render() {
     return (
       <>
       <Html lang="en">
         <Head>
-          {this.props.styleTags}
+          <style jsx>{`
+            ${this.props.styleTags}
+          `}
+          </style>
         </Head>
         <body>
           <Main />
