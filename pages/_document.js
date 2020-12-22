@@ -32,7 +32,7 @@ class MyDocument extends Document {
     const { styleTag } = this.props;
     return (
       <>
-      <Html amp=''>
+      <Html lang="en" amp=''>
         <Head>
         {styleTag}
         </Head>
